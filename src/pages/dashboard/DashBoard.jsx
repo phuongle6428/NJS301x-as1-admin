@@ -3,13 +3,14 @@ import { MdOutlineAccountBalanceWallet, MdOutlineMonetizationOn, MdOutlineShoppi
 import { Table } from 'antd';
 import './dashboard.css'
 import { columns } from './dashboardtable';
+import { API_URL } from '../../ultis/env';
 
 export default function DashBoard() {
   const [transaction, setTransaction] = useState([])
   useEffect(() => {
     async function getTransaction() {
       const user = JSON.parse(localStorage.getItem('user'))
-      let response = await fetch('http://localhost:5000/admin/transaction?limit=8')
+      let response = await fetch(`${API_URL}/admin/transaction?limit=8`)
       let data = await response.json()
       if (data) {
         let tableData = data.map((value, index) => {

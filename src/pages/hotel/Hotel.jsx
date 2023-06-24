@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Table, Button } from 'antd';
 import { getColumns } from './hoteltable';
 import './hotel.css'
+import { API_URL } from '../../ultis/env';
 
 export default function Hotel() {
   const [hotel, setHotel] = useState([])
@@ -9,7 +10,7 @@ export default function Hotel() {
     getHotel()
   }, [])
   async function getHotel() {
-    let response = await fetch('http://localhost:5000/admin/hotel')
+    let response = await fetch(`${API_URL}/admin/hotel`)
     let data = await response.json()
     if (data) {
       let tableData = data.map((value, index) => {

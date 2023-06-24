@@ -2,12 +2,13 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import LogRegForm from '../../components/LogRegForm/LogReg'
 import Navbar from '../../components/navbar/Navbar'
+import { API_URL } from '../../ultis/env'
 
 export default function Register() {
   const navigate = useNavigate()
   const handleRegister = async (e, form) => {
     e.preventDefault();
-    let response = await fetch('http://localhost:5000/admin/register', {
+    let response = await fetch(`${API_URL}/admin/register`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

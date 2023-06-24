@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { Table } from 'antd';
 import './transaction.css'
 import { columns } from './transactiontable';
+import { API_URL } from '../../ultis/env';
 
 export default function Transaction() {
   const [transaction, setTransaction] = useState([])
   useEffect(() => {
     async function getTransaction() {
       const user = JSON.parse(localStorage.getItem('user'))
-      let response = await fetch('http://localhost:5000/admin/transaction')
+      let response = await fetch(`${API_URL}/admin/transaction`)
       let data = await response.json()
       if (data) {
         let tableData = data.map((value, index) => {

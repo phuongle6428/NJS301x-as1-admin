@@ -2,6 +2,7 @@ import { Button, Table } from 'antd'
 import React, { useEffect, useState } from 'react'
 import './room.css'
 import { getColumns } from './roomtable'
+import { API_URL } from '../../ultis/env'
 
 export default function Room() {
   const [rooms, setRooms] = useState([])
@@ -9,7 +10,7 @@ export default function Room() {
     getRooms()
   }, [])
   async function getRooms() {
-    let response = await fetch('http://localhost:5000/admin/rooms')
+    let response = await fetch(`${API_URL}/admin/rooms`)
     let data = await response.json()
     if (data) {
       let tableData = data.map((value, index) => {

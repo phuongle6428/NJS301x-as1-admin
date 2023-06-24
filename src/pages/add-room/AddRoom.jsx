@@ -1,6 +1,7 @@
 import { Box, TextField, MenuItem, Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import './addroom.css'
+import { API_URL } from '../../ultis/env'
 
 export default function AddRoom() {
   const [hotels, setHotels] = useState([])
@@ -11,7 +12,7 @@ export default function AddRoom() {
 
   useEffect(() => {
     async function getHotels() {
-      const response = await fetch('http://localhost:5000/admin/hotel')
+      const response = await fetch(`${API_URL}/admin/hotel`)
       let data = await response.json()
       setHotels(data)
     }
@@ -62,7 +63,7 @@ export default function AddRoom() {
       alert("Missing input field")
       return
     }
-    let response = await fetch('http://localhost:5000/admin/add/room', {
+    let response = await fetch(`${API_URL}/admin/add/room`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

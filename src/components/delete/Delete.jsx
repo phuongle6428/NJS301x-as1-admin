@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Modal } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../../ultis/env';
 
 export default function Delete({ _id , callData, api}) {
    const navigate = useNavigate()
@@ -10,7 +11,7 @@ export default function Delete({ _id , callData, api}) {
       if(isAvail) {
          return 
       }
-      let response = await fetch(`http://localhost:5000/admin/${api}`, {
+      let response = await fetch(`${API_URL}/admin/${api}`, {
          method: "DELETE",
          headers: {
             'Content-Type': "application/json"
@@ -26,7 +27,7 @@ export default function Delete({ _id , callData, api}) {
    const handleShowModal = async () => {
       let params = new URLSearchParams()
       params.append('_id', _id)
-      let response = await fetch(`http://localhost:5000/admin/transaction/${api}?${params}`)
+      let response = await fetch(`${API_URL}/admin/transaction/${api}?${params}`)
       let data = await response.json()
       if (data.length > 0) {
          setIsAvail(true)
