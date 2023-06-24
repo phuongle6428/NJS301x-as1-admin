@@ -1,0 +1,18 @@
+.transaction .tableboard {
+   margin: 0.35rem;
+   padding: 1rem 1.5rem 0 1.5rem;
+   border: 1px solid rgba(128, 128, 128, 0.211);
+   box-shadow: 1px 2px 0.25rem #80808040;
+   border-radius: 8px;
+}
+.transaction .tableboard .ant-table-container {
+   border: 1px solid rgba(128, 128, 128, 0.211);
+}
+.transaction .tableboard .ant-table-title {
+   padding: 0.75rem 0;
+   font-size: 1.25rem;
+   color: grey;
+}
+.transaction .tableboard .ant-table-cell {
+   padding: 0.75rem 0.5rem;
+}

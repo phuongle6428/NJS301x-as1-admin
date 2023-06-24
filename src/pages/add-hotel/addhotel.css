@@ -1,0 +1,38 @@
+.add-hotel .title {
+   margin: 0.35rem;
+   padding: 0.8rem 0.4rem;
+   border: 1px solid rgba(128, 128, 128, 0.211);
+   box-shadow: 2px 3px 0.5rem #80808040;
+   color: rgba(128, 128, 128, 0.5);
+   font-size: 1rem;
+   font-weight: 500;
+}
+.add-hotel .add-hotel__form {
+   margin: 1rem 0.35rem 0.35rem;
+   padding: 0.5rem 1.5rem 0.5rem 2rem;
+   border: 1px solid rgba(128, 128, 128, 0.211);
+   box-shadow: 2px 3px 0.5rem #80808040;
+   color: rgba(128, 128, 128, 0.5);
+}
+.add-hotel .material-form {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+.add-hotel .material-form > * {
+   flex-grow: 1;
+   max-width: 40%;
+   margin-bottom: 1.5rem;
+}
+.add-hotel .material-form > button {
+   max-width: 20%;
+   min-width: max-content;
+}
+.add-hotel .material-form > div:last-of-type {
+   max-width: none;
+   margin-top: 1rem;
+}
+.add-hotel .material-form > div:last-of-type select {
+   margin-top: 0.75rem;
+   margin-bottom: 0.75rem;
+}

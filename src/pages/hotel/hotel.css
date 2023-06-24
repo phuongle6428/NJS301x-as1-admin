@@ -1,0 +1,38 @@
+.hotel {
+   margin: 0.35rem;
+}
+.hotel .ant-table-container {
+   border: 1px solid rgba(128, 128, 128, 0.211);
+}
+.hotel .ant-table-title {
+   display: flex;
+   padding: 0.75rem 0;
+   font-size: 1.25rem;
+   color: grey;
+   justify-content: space-between;
+   align-items: center;
+}
+.hotel .ant-table-title .add-btn {
+   color: green;
+   border: 1px solid rgba(0, 128, 0, 0.6);
+   font-weight: 500;
+   transition: 0.5s all;
+}
+.hotel .ant-table-title .add-btn:hover {
+   color: white;
+   background-color: rgba(0, 128, 0, 0.6);
+}
+.hotel .ant-table-cell {
+   padding: 0.75rem 0.5rem;
+}
+
+.hotel .ant-table-cell .delete-btn {
+   border: 1px dashed rgba(255, 0, 0, 0.6);
+   color: red;
+   font-weight: 500;
+   transition: 0.5s all;
+}
+.hotel .ant-table-cell .delete-btn:hover {
+   color: white;
+   background-color: rgba(255, 0, 0, 0.6);
+}
